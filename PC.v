@@ -31,17 +31,14 @@ module PC(
 	input wire JMP,
 	input wire[25:0] index,
 	output reg[31:0] pc,
-	output wire[31:0] pc_temp,
-	output wire[31:0] in0,
-    output wire[31:0] in1,
-    output wire[31:0] in2
     );
 wire[31:0] pc_4;
-//wire[31:0] in0;
-//wire[31:0] in1;
-//wire[31:0] in2;
+wire[31:0] in0;
+wire[31:0] in1;
+wire[31:0] in2;
 wire[1:0] sel;
-wire[32:0] unsign_imm;
+wire[31:0] unsign_imm;
+wire[31:0] pc_temp,
 reg count=0;
 assign unsign_imm={{16{imm[15]}},imm};
 assign sel={JMP,BJ};

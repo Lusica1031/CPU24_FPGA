@@ -28,7 +28,7 @@ module Mux4_2_5(
     input wire[4:0] n3,
     output reg[4:0] num
     );
-    always@(sel)begin
+    always@(*)begin
     case (sel)
     2'b00:num<=n0;
     2'b01:num<=n1;

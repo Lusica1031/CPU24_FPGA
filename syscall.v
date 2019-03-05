@@ -32,11 +32,11 @@ output [31:0] ledData
     assign control=~D;
     assign ledData=leddata;
     
-    initial
+    /*initial
     begin
         D<=1;
         leddata<=0;
-    end
+    end*/
     
     always@(posedge clk or posedge rst)
     begin
@@ -46,9 +46,11 @@ output [31:0] ledData
             leddata<=a0;
     end
     
-    always@(posedge clk or posedge go)
+    always@(posedge clk or posedge rst or posedge go)
         begin
-            if(go)
+            if(rst)
+                D<=1;
+            else if(go)
                 D<=0;
             else if(control)
                 D<=v0!=34&&syscall;

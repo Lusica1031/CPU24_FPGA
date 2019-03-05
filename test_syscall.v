@@ -46,6 +46,8 @@ module test_syscall(
         rst=0;
         syscall=0;
         go=0;
+        #1 rst=1;
+        #1 rst=0;
         #1 go=1;
         #1 go=0;
         #10 syscall=1;

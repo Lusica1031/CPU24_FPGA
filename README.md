@@ -1,2 +1,2 @@
 # CPU24_FPGA
-组原课设_1
+Please find the codes in different braches.
